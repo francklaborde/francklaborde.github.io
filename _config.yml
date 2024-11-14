@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Franck Laborde"
+title                    : "Franck Laborde - AI/ML Research student"
 title_separator          : "-"
 name                     : &name "Franck Laborde"
 description              : &description "AI/ML Research student"
@@ -22,10 +22,10 @@ repository               : "francklaborde.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "qdsf"
+  name             : "Franck Laborde"
   pronouns         : # example: "she/her"  
   bio              : "Currently studying in Master Mathematiques Vision Apprentissage (MVA) at ENS Paris-Saclay, I share all I do as projects, work and courses on my Github Pager"
-  location         : ""
+  location         : "Paris, France"
   employer         : "ENS Paris-Saclay"
   uri              : # URL
   email            : "f.laborde6540@gmail.com" 
@@ -49,7 +49,7 @@ author:
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
+  bluesky          : # Username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
@@ -58,7 +58,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : "https://www.linkedin.com/in/franck-laborde-1b6350200/"
+  linkedin         : "franck-laborde-1b6350200"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -116,7 +116,7 @@ staticman:
       type               : "date"
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
-atom_feed:
+atom_feed:               : false # true (default), false
   hide                   : false     # change to true to hide the RSS feed in the footer
   path                   : # blank (default) uses feed.xml
 
