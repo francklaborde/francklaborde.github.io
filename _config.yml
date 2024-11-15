@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Franck Laborde - AI/ML Research student"
+title                    : "Franck Laborde"
 title_separator          : "-"
 name                     : &name "Franck Laborde"
 description              : &description "AI/ML Research student"

@@ -11,54 +11,39 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Master MVA (Mathématique Vision Apprentissage), ENS Paris-Saclay, 2025 (expected)
+* Master Engineer, specialized in data science, ISAE-Supaero, 2020-2024
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* September 2023 to September 2024: Data Analyst Apprentice
+  * Safran Cabin France
+  * Data Analyst engineer in Marketing & Pricing team
+  * Leading software development projects 
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* March to August 2023 : Data Management engineer Intern
+  * ArianeGroup 
+  * Various tasks carried out such as automatic migration of data from different databases and creation of KPIs.
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* March to July 2022 : Research Intern
+  * Two labs of CNRS : Laboratory of Theorical Physic and Institute of Astrophysic and Planetology
+  * Computer science research internship to help compile software such as CMake.
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Languages:
+  * French : Mother tongue
+  * English : C1
+  * Spanish : B2
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+* Computer Skill
+  * Python  (NumPy, Pandas, PyTorch, Scikit-learn)
+  * Git
+  * Java
+  * C/C++
+  * SQL
+  * CMake
   
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+<!-- Service and leadership
+====== To put : Compet Kaggle, challenge etc
+*  -->
