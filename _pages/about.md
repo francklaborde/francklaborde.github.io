@@ -16,4 +16,4 @@ I have a deep interest in the intersection of computer vision, machine learning,
 
 ## Explore My Work
 
-Feel free to explore my [projects](https://francklaborde.github.io/portfolio) to see some of my work, or check out my [CV](https://francklaborde.github.io/resume) for more details about my background. If you’d like to collaborate or have any questions, don’t hesitate to contact me.
+Feel free to explore my [projects](https://francklaborde.github.io/portfolio) to see some of my work, or check out my [CV](https://francklaborde.github.io/cv) for more details about my background. If you’d like to collaborate or have any questions, don’t hesitate to contact me.

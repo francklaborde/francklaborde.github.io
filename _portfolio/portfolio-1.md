@@ -8,7 +8,7 @@ collection: portfolio
 
 This notebook demonstrates the dynamic structure of neural networks, focusing on pruning and neurogenesis.
 
-<iframe src="assets/notebooks/Neurogenesis.html" width="100%" height="600px"></iframe>
+[View the Notebook](assets/notebooks/your_notebook.html)
 
 ### Download the Notebook
 To explore the notebook locally or modify it, you can download the Jupyter Notebook file:
