@@ -21,7 +21,7 @@ repository               : "francklaborde.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "/images/first_page.jpg"
+  avatar           : "images/first_page.jpg"
   name             : "Franck Laborde"
   pronouns         : # example: "she/her"  
   bio              : "Currently studying in Master Mathematiques Vision Apprentissage (MVA) at ENS Paris-Saclay, I share here I do as projects, work and courses."
