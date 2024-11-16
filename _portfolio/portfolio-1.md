@@ -6,10 +6,6 @@ collection: portfolio
 
 ## Overview
 
-This notebook demonstrates the dynamic structure of neural networks, focusing on pruning and neurogenesis. 
-
-[View the Notebook](assets/notebooks/Neurogenesis.html)
-
-Alternatively, you can embed the notebook inline:
+This notebook demonstrates the dynamic structure of neural networks, focusing on pruning and neurogenesis.
 
 <iframe src="assets/notebooks/Neurogenesis.html" width="100%" height="600px"></iframe>
