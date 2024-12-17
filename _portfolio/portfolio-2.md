@@ -4,52 +4,24 @@ excerpt: "This work presents an overview on the article Are Generative Classifie
 collection: portfolio-2
 ---
 
-## Test
-
-Three detection methods are proposed.
-
-**Marginal detection**: reject the input data that are far from the data manifold \( -\log p(x) > \delta \) with \[
-\delta = \bar{\mu}_{\mathcal{D}}+\alpha \bar{\sigma}_{\mathcal{D}}
-\]
-and
-\[
-\bar{\mu}_{\mathcal{D}}= \mathbb{E}_{x\sim\mathcal{D}}[-\log p(x)]
-\]
-\[
-\bar{\sigma}_{\mathcal{D}}=\sqrt{\mathbb{V}_{x\sim\mathcal{D}}[\log p(x)]}
-\]
-
-**Logit detection**: reject the data that are far from the joint density \( -\log p(x, F(x))>\delta_{y} \) with \[
-\delta_{y_c}=\bar{\mu}_c+\alpha\bar{\sigma}_c
-\]
-for each class \(c={1,\dots,C}\).
-
-**Divergence detection**: reject inputs with over-confident and/or under-confident predictions. \[
-D[p_{c^*} \| p(\bm{x}^*)] > \bar{\mu}_{c^*} + \alpha \bar{\sigma}_{c^*}
-\]
-with \(c^* = \arg \max p(x)\) and \(p_{c^*}= \mathbb{E}_{(x, y_{c^*}) \in \mathcal{D}}[p(x)]\)
-
-
 ## Introduction
 
-Generative classifiers have been proposed as a potentially more robust alternative to discriminative classifiers. Deep Bayes classifiers, an improvement on classical Naive Bayes models, use deep latent variable models (LVMs) trained via variational inference. We explore the robustness of generative classifiers under hand-crafted black-box adversarial attacks, on what would be a real world setting, training and testing on the German Traffic Sign Recognition Benchmark (GTSRB) dataset, a domain where robustness is extremely important. Traffic sign recognition systems are vital for autonomous driving, but are particularly susceptible to real-world adversarial attacks, such as strategically placed stickers. The different factorizations of \\(p(x, z, y)\\) enable diverse robustness and detection capabilities, that we explore in our experiments.
+Generative classifiers have been proposed as a potentially more robust alternative to discriminative classifiers. Deep Bayes classifiers, an improvement on classical Naive Bayes models, use deep latent variable models (LVMs) trained via variational inference. We explore the robustness of generative classifiers under hand-crafted black-box adversarial attacks, on what would be a real world setting, training and testing on the German Traffic Sign Recognition Benchmark (GTSRB) dataset, a domain where robustness is extremely important. Traffic sign recognition systems are vital for autonomous driving, but are particularly susceptible to real-world adversarial attacks, such as strategically placed stickers. The different factorizations of $p(x, z, y)$ enable diverse robustness and detection capabilities, that we explore in our experiments.
 
 ## Deep Bayes
 
-LVMs introduce unobserved latent variables \\(z\\) to model the joint distribution \\(p(x, y)\\) of inputs \\(x\\) and labels \\(y\\). The joint distribution is expressed as:
+LVMs introduce unobserved latent variables $z$ to model the joint distribution $p(x, y)$ of inputs $x$ and labels $y$. The joint distribution is expressed as:
 $$
-\displaylines{
 p(x, z, y) = p(z)p(y|z)p(x|z, y),
-}
 $$
 
-Variational Autoencoders approximate \\(p(x|z, y)\\) using neural networks. The training involves optimizing the variational lower bound:
+Variational Autoencoders approximate $p(x|z, y)$ using neural networks. The training involves optimizing the variational lower bound:
 $$
 \displaylines{
 \mathbb{E}_\mathcal{D}[\mathcal{L}_{VI}(x, y)] = \frac{1}{N} \sum_{n=1}^N \mathbb{E}_{q} \left[ \log \frac{p(x_n, z_n, y_n)}{q(z_n|x_n, y_n)} \right],
 }
 $$
-After training, the generative classifiers predict the label \\(y^*\\) for a given input \\(x^*\\) by approximating Bayes' rule using importance sampling. The predicted class probability is computed as:
+After training, the generative classifiers predict the label $y^*$ for a given input $x^*$ by approximating Bayes' rule using importance sampling. The predicted class probability is computed as:
 $$
 \displaylines{
 p(y^*|x^*) \approx \text{softmax}_{c=1}^C \left[ \log \frac{1}{K} \sum_{k=1}^K \frac{p(x^*, z_c^k, y_c)}{q(z_c^k | x^*, y_c)} \right],
@@ -58,7 +30,7 @@ $$
 
 ## The models
 
-We evaluated seven models, four generative and three discriminative classifiers. Each model follows a distinct factorization of \\(p(x, z, y)\\) (see Figure \ref{fig:models_schema}).
+We evaluated seven models, four generative and three discriminative classifiers. Each model follows a distinct factorization of $p(x, z, y)$ (see Figure \ref{fig:models_schema}).
 $$
 \begin{aligned}
 p(x, z, y) &= p(z)p(y|z)p(x|z, y) & \text{(GFZ)} \\
@@ -88,13 +60,13 @@ $$
 \displaylines{
     -\log p(x) > \delta
 }$$
-with \\(\delta = \bar{\mu}_{\mathcal{D}}+\alpha \bar{\sigma}_{\mathcal{D}}\\) and \\(\bar{\mu}_{\mathcal{D}}= \mathbb{E}_{x\sim\mathcal{D}}[-\log p(x)]\\), \\(\bar{\sigma}_{\mathcal{D}}=\sqrt{\mathbb{V}_{x\sim\mathcal{D}}[\log p(x)]}\\).
+with $\delta = \bar{\mu}_{\mathcal{D}}+\alpha \bar{\sigma}_{\mathcal{D}}$ and $\bar{\mu}_{\mathcal{D}}= \mathbb{E}_{x\sim\mathcal{D}}[-\log p(x)]$, $\bar{\sigma}_{\mathcal{D}}=\sqrt{\mathbb{V}_{x\sim\mathcal{D}}[\log p(x)]}$.
 
 -  **Logit detection**:reject the data that are far from the joint density $$\displaylines{-\log p(x, F(x))>\delta_{y}}$$
-with \\(\delta_{y_c}=\bar{\mu}_c+\alpha\bar{\sigma}_c\\), for each class \\(c=\{1,\dots,C\}\\).
+with $\delta_{y_c}=\bar{\mu}_c+\alpha\bar{\sigma}_c$, for each class $c=\{1,\dots,C\}$.
 
 -  **Divergence detection**: reject inputs with over-confident and/or under-confident predictions. $$\displaylines{D[p_{c^*} \| p(\bm{x}^*)] > \bar{\mu}_{c^*} + \alpha \bar{\sigma}_{c^*}}$$.
-with \\(c^*=arg \max p(x^*)\\) and \\(p_{c^*}= \mathbb{E}_{(x, y_{c^*}) \in \mathcal{D}}[p(x)]\\)
+with $c^*=arg \max p(x^*)$ and $p_{c^*}= \mathbb{E}_{(x, y_{c^*}) \in \mathcal{D}}[p(x)]$
 
 ## Adversarial attacks
 
@@ -105,9 +77,9 @@ $$
     x_{\text{adv}} = x + \eta 
 }
 $$
-where \\(\eta \sim \mathcal{N}(0, \varepsilon^2)\\).
-- **Sticker**: It overlays a patch (a sticker) over an image, near its center. The sticker's size \\(\varepsilon\\) represents a fraction of the image area. The sticker's color is randomly picked for each test image between different flashy colors: bright yellow, neon green, neon pink, bright cyan, bright orange.
-Each method is used to attack each of the 7 models, with varying \\(\varepsilon\\).
+where $\eta \sim \mathcal{N}(0, \varepsilon^2)$.
+- **Sticker**: It overlays a patch (a sticker) over an image, near its center. The sticker's size $\varepsilon$ represents a fraction of the image area. The sticker's color is randomly picked for each test image between different flashy colors: bright yellow, neon green, neon pink, bright cyan, bright orange.
+Each method is used to attack each of the 7 models, with varying $\varepsilon$.
 
 ![Black box attack on GTSRB](https://francklaborde.github.io/portfolio/portfolio-2/fig/attacks_bbox_gtsrb_E.png)
 *Figure 2.Example of the black-box adversarial attacks with different $\varepsilon$ values.*
