@@ -6,13 +6,15 @@ collection: portfolio-2
 
 ## Introduction
 
-Generative classifiers have been proposed as a potentially more robust alternative to discriminative classifiers. Deep Bayes classifiers, an improvement on classical Naive Bayes models, use deep latent variable models (LVMs) trained via variational inference. We explore the robustness of generative classifiers under hand-crafted black-box adversarial attacks, on what would be a real world setting, training and testing on the German Traffic Sign Recognition Benchmark (GTSRB) dataset, a domain where robustness is extremely important. Traffic sign recognition systems are vital for autonomous driving, but are particularly susceptible to real-world adversarial attacks, such as strategically placed stickers. The different factorizations of $p(x, z, y)$ enable diverse robustness and detection capabilities, that we explore in our experiments.
+Generative classifiers have been proposed as a potentially more robust alternative to discriminative classifiers. Deep Bayes classifiers, an improvement on classical Naive Bayes models, use deep latent variable models (LVMs) trained via variational inference. We explore the robustness of generative classifiers under hand-crafted black-box adversarial attacks, on what would be a real world setting, training and testing on the German Traffic Sign Recognition Benchmark (GTSRB) dataset, a domain where robustness is extremely important. Traffic sign recognition systems are vital for autonomous driving, but are particularly susceptible to real-world adversarial attacks, such as strategically placed stickers. The different factorizations of \\(p(x, z, y)\\) enable diverse robustness and detection capabilities, that we explore in our experiments.
 
 ## Deep Bayes
 
 LVMs introduce unobserved latent variables $z$ to model the joint distribution $p(x, y)$ of inputs $x$ and labels $y$. The joint distribution is expressed as:
 $$
+\displaylines{
 p(x, z, y) = p(z)p(y|z)p(x|z, y),
+}
 $$
 
 Variational Autoencoders approximate $p(x|z, y)$ using neural networks. The training involves optimizing the variational lower bound:
