@@ -10,20 +10,20 @@ Generative classifiers have been proposed as a potentially more robust alternati
 
 ## Deep Bayes
 
-LVMs introduce unobserved latent variables $z$ to model the joint distribution $p(x, y)$ of inputs $x$ and labels $y$. The joint distribution is expressed as:
+LVMs introduce unobserved latent variables \\(z\\) to model the joint distribution \\(p(x, y)\\) of inputs \\(x\\) and labels \\(y\\). The joint distribution is expressed as:
 $$
 \displaylines{
 p(x, z, y) = p(z)p(y|z)p(x|z, y),
 }
 $$
 
-Variational Autoencoders approximate $p(x|z, y)$ using neural networks. The training involves optimizing the variational lower bound:
+Variational Autoencoders approximate \\(p(x|z, y)\\) using neural networks. The training involves optimizing the variational lower bound:
 $$
 \displaylines{
 \mathbb{E}_\mathcal{D}[\mathcal{L}_{VI}(x, y)] = \frac{1}{N} \sum_{n=1}^N \mathbb{E}_{q} \left[ \log \frac{p(x_n, z_n, y_n)}{q(z_n|x_n, y_n)} \right],
 }
 $$
-After training, the generative classifiers predict the label $y^*$ for a given input $x^*$ by approximating Bayes' rule using importance sampling. The predicted class probability is computed as:
+After training, the generative classifiers predict the label \\(y^*\\) for a given input \\(x^*\\) by approximating Bayes' rule using importance sampling. The predicted class probability is computed as:
 $$
 \displaylines{
 p(y^*|x^*) \approx \text{softmax}_{c=1}^C \left[ \log \frac{1}{K} \sum_{k=1}^K \frac{p(x^*, z_c^k, y_c)}{q(z_c^k | x^*, y_c)} \right],
@@ -32,7 +32,7 @@ $$
 
 ## The models
 
-We evaluated seven models, four generative and three discriminative classifiers. Each model follows a distinct factorization of $p(x, z, y)$ (see Figure \ref{fig:models_schema}).
+We evaluated seven models, four generative and three discriminative classifiers. Each model follows a distinct factorization of \\(p(x, z, y)\\) (see Figure \ref{fig:models_schema}).
 $$
 \begin{aligned}
 p(x, z, y) &= p(z)p(y|z)p(x|z, y) & \text{(GFZ)} \\
@@ -62,29 +62,35 @@ $$
 \displaylines{
     -\log p(x) > \delta
 }$$
-with $\delta = \bar{\mu}_{\mathcal{D}}+\alpha \bar{\sigma}_{\mathcal{D}}$ and $\bar{\mu}_{\mathcal{D}}= \mathbb{E}_{x\sim\mathcal{D}}[-\log p(x)]$, $\bar{\sigma}_{\mathcal{D}}=\sqrt{\mathbb{V}_{x\sim\mathcal{D}}[\log p(x)]}$.
+with \\(\delta = \bar{\mu}_{\mathcal{D}}+\alpha \bar{\sigma}_{\mathcal{D}}\\) and \\(\bar{\mu}_{\mathcal{D}}= \mathbb{E}_{x\sim\mathcal{D}}[-\log p(x)]\\), \\(\bar{\sigma}_{\mathcal{D}}=\sqrt{\mathbb{V}_{x\sim\mathcal{D}}[\log p(x)]}\\).
 
--  **Logit detection**:reject the data that are far from the joint density $$\displaylines{-\log p(x, F(x))>\delta_{y}}$$
-with $\delta_{y_c}=\bar{\mu}_c+\alpha\bar{\sigma}_c$, for each class $c=\{1,\dots,C\}$.
+-  **Logit detection**:reject the data that are far from the joint density 
 
--  **Divergence detection**: reject inputs with over-confident and/or under-confident predictions. $$\displaylines{D[p_{c^*} \| p(\bm{x}^*)] > \bar{\mu}_{c^*} + \alpha \bar{\sigma}_{c^*}}$$.
-with $c^*=arg \max p(x^*)$ and $p_{c^*}= \mathbb{E}_{(x, y_{c^*}) \in \mathcal{D}}[p(x)]$
+$$\displaylines{-\log p(x, F(x))>\delta_{y}}$$
+with \\(\delta_{y_c}=\bar{\mu}_c+\alpha\bar{\sigma}_c\\), for each class \\(c=\{1,\dots,C\}\\).
+
+-  **Divergence detection**: reject inputs with over-confident and/or under-confident predictions. 
+
+$$\displaylines{D[p_{c^*} \| p(\bm{x}^*)] > \bar{\mu}_{c^*} + \alpha \bar{\sigma}_{c^*}}$$
+
+with \\(c^*=arg \max p(x^*)\\) and \\(p_{c^*}= \mathbb{E}_{(x, y_{c^*}) \in \mathcal{D}}[p(x)]\\)
 
 ## Adversarial attacks
 
-An adversarial attack is called a white-box attack when the method has access to the model's weights to generate adversarial examples. It is called a black-box attack when the method has only access to the inputs and outputs of the model, but not its weights. We defined the following black-box method, that are illustrated in Figure \ref{fig:adv-attacks}.
+An adversarial attack is called a white-box attack when the method has access to the model's weights to generate adversarial examples. It is called a black-box attack when the method has only access to the inputs and outputs of the model, but not its weights. We defined the following black-box method, that are illustrated in [Figure 2](#Figure2).
 - **Gaussian**: It modifies an image by adding Gaussian noise to each pixel.
 $$
 \displaylines{
     x_{\text{adv}} = x + \eta 
 }
 $$
-where $\eta \sim \mathcal{N}(0, \varepsilon^2)$.
-- **Sticker**: It overlays a patch (a sticker) over an image, near its center. The sticker's size $\varepsilon$ represents a fraction of the image area. The sticker's color is randomly picked for each test image between different flashy colors: bright yellow, neon green, neon pink, bright cyan, bright orange.
-Each method is used to attack each of the 7 models, with varying $\varepsilon$.
+where \\(\eta \sim \mathcal{N}(0, \varepsilon^2)\\).
+- **Sticker**: It overlays a patch (a sticker) over an image, near its center. The sticker's size \\(\varepsilon\\) represents a fraction of the image area. The sticker's color is randomly picked for each test image between different flashy colors: bright yellow, neon green, neon pink, bright cyan, bright orange.
+Each method is used to attack each of the 7 models, with varying \\(\varepsilon\\).
 
+<a name="Figure2"></a>
 ![Black box attack on GTSRB](https://francklaborde.github.io/portfolio/portfolio-2/fig/attacks_bbox_gtsrb_E.png)
-*Figure 2.Example of the black-box adversarial attacks with different $\varepsilon$ values.*
+*Figure 2.Example of the black-box adversarial attacks with different \\(\varepsilon\\) values.*
 
 ## Results: Accuracy vs. Attack Strength with Detection
 
