@@ -12,7 +12,8 @@ Hi, I’m Franck ! I am a student in the Mathématiques Vision Apprentissage (MV
 ## What I Do
 
 I have a deep interest in the intersection of computer vision, machine learning, and research. My recent projects include:
-- Improving neural network architectures through dynamic neural network.
+- Improving neural network architectures through dynamic neural network ([View project](https://francklaborde.github.io/portfolio/portfolio-1)).
+- Exploring the advantages of generative classifier over discrimative ones when adversarial attacks are performed on a model ([View project](https://francklaborde.github.io/portfolio/portfolio-2)).
 
 ## Explore My Work
 

@@ -12,6 +12,12 @@ redirect_from:
 Education
 ======
 * Master MVA (Mathématique Vision Apprentissage), ENS Paris-Saclay, 2025 (expected)
+  - Courses on the first semester followed : 
+    - [Object recognition and Computer Vision](https://gulvarol.github.io/teaching/recvis24/). Final project on [Masked Auto Encoder]()
+    - [Introduction to Probabilistic Graphical Models and Deep Generative Models](https://lmbp.uca.fr/~latouche/mva/IntroductiontoProbabilisticGraphicalModelsMVA.html). Final project on [adversarial attacks]()
+    - [Convex Optimization](https://www.di.ens.fr/~aspremon/OptConvexeM2.html)
+    - [Machine Learning for Time Series](https://www.laurentoudre.fr/ast.html). Final project on signal denoising
+    - [Geometrical Data Analysis](https://www.jeanfeydy.com/Teaching/index.html?fbclid=IwZXh0bgNhZW0CMTEAAR3kh2CAFPczBEPZI9-3kgGoIoSJ3VySwYARaiUjFuInYWvTZmuV8G8IBTc_aem_F_KygCzpw9k0f2F4sZKHDw)
 * Master Engineer, specialized in data science, ISAE-Supaero, 2020-2024
 
 Work experience
