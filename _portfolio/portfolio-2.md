@@ -32,7 +32,7 @@ $$
 
 ## The models
 
-We evaluated seven models, four generative and three discriminative classifiers. Each model follows a distinct factorization of \\(p(x, z, y)\\) (see Figure \ref{fig:models_schema}).
+We evaluated seven models, four generative and three discriminative classifiers. Each model follows a distinct factorization of \\(p(x, z, y)\\) (see [Figure 1](#Figure1)).
 $$
 \begin{aligned}
 p(x, z, y) &= p(z)p(y|z)p(x|z, y) & \text{(GFZ)} \\
