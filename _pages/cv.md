@@ -22,18 +22,23 @@ Education
 
 Work experience
 ======
-* September 2023 to September 2024: Data Analyst Apprentice
-  * Safran Cabin France
+* March 2025 up to now : **Research Intern**
+  * *BNP Paribas Cardif*, in the R&D team 
+  * Internship subject : Prebuilt Information Extraction models by leveragingSynthetic Document Image Generation.
+  * Creation of synthetic dataset to improve the robustness of deep learning model used to extract information
+  * Development of a pipeline to create datasets and train models.
+* September 2023 to September 2024: **Data Analyst Apprentice**
+  * *Safran Cabin France*
   * Data Analyst engineer in Marketing & Pricing team
   * Leading software development projects 
 
-* March to August 2023 : Data Management engineer Intern
-  * ArianeGroup 
+* March to August 2023 : **Data Management engineer Intern**
+  * *ArianeGroup* 
   * Various tasks carried out such as automatic migration of data from different databases and creation of KPIs.
 
-* March to July 2022 : Research Intern
-  * Two labs of CNRS : Laboratory of Theorical Physic and Institute of Astrophysic and Planetology
-  * Computer science research internship to help compile software such as CMake.
+* March to July 2022 : **Research Intern**
+  * *Two labs of CNRS : Laboratory of Theorical Physic and Institute of Astrophysic and Planetology*
+  * Computer science research internship to help compile code using software such as CMake.
   
 Skills
 ======
